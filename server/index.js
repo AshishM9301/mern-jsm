@@ -5,6 +5,7 @@ import cors from "cors";
 import dotEnv from "dotenv";
 
 import postRoutes from "./routes/posts.js";
+import userRoutes from "./routes/users.js";
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(cors());
 dotEnv.config({ path: "./.env" });
 
 app.use("/posts", postRoutes);
+app.use("/user", userRoutes);
 
 console.log(process.env.CONNECTION_URL);
 
